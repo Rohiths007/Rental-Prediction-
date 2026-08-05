@@ -1,0 +1,25 @@
+[project]
+name = "rental-prediction-api"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+authors = [
+    { name = "rohith-cse07", email = "rohith07.cse@gmail.com" }
+]
+requires-python = ">=3.10"
+dependencies = [
+    "fastapi[standard]>=0.141.1",
+    "joblib>=1.5.3",
+    "pandas>=2.3.3",
+    "scikit-learn==1.6.1",
+    "streamlit>=1.61.0",
+    "uvicorn>=0.52.1",
+    "xgboost>=3.2.0",
+]
+
+[project.scripts]
+rental-prediction-api = "rental_prediction_api:main"
+
+[build-system]
+requires = ["uv_build>=0.12.1,<0.13.0"]
+build-backend = "uv_build"
