@@ -1,3 +1,5 @@
+import os
+
 import streamlit as st
 import requests
 
@@ -175,8 +177,13 @@ if st.button("🔮 Predict Rent", use_container_width=True):
 
     try:
 
+        API_URL = os.getenv(
+            "API_URL",
+            "http://127.0.0.1:8000"
+        )
+
         response = requests.post(
-            "http://127.0.0.1:8000/predict",
+            f"{API_URL}/predict",
             json=data
         )
 
